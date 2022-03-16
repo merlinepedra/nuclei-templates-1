@@ -1,0 +1,20 @@
+id: gradle-enterprise-detect
+
+info:
+  name: Gradle Enterprise Panel Detect
+  author: princechaddha
+  severity: info
+  tags: panel,gradle
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    redirects: true
+    max-redirects: 2
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>Gradle Enterprise</title>"
